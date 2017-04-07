@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	 
+	<bean id="iconexion" class="com.anzen.beans.ConexionBean" scope="prototype">
+		<property name="iconexion" ref="conexion" /> 
+		<property name="mongo" ref="cliMongo"></property>
+		<property name="jsonarray" ref="jsonarrayClass"></property>
+		<property name="jsonobj" ref="jsonobjClass"></property> 
+		<property name="obj" ref="objClass"></property>
+		
+		 
+	</bean>
+	
+	<bean id="conexion" class="com.anzen.conexion.basedatos.Conexion" scope="prototype"></bean> 
+	<bean id="cliMongo" class="com.mongodb.MongoClient" scope="prototype"></bean>
+	<bean id="jsonarrayClass" class="org.json.simple.JSONArray" scope="prototype"></bean>
+	<bean id="jsonobjClass" class="org.json.simple.JSONObject" scope="prototype"></bean> 
+	<bean id="objClass" class="com.mongodb.BasicDBObject" scope="prototype"></bean>
+	
+</beans>
